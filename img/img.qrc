@@ -1,0 +1,21 @@
+<RCC>
+    <qresource prefix="/image">
+        <file>load.gif</file>
+        <file>back.jpg</file>
+        <file>coreModel-1.gif</file>
+        <file>panModel-1b.gif</file>
+        <file>panModel-1c.gif</file>
+        <file>panModel-1d.gif</file>
+        <file>panModel-1.gif</file>
+        <file>model_description1.gif</file>
+        <file>newModel-1.gif</file>
+        <file>model_description2.gif</file>
+        <file>model_description3.gif</file>
+        <file>p.gif</file>
+        <file>p16x16.ico</file>
+        <file>p32x32.ico</file>
+        <file>p48x48.ico</file>
+        <file>p128x128.ico</file>
+        <file>favicon.ico</file>
+    </qresource>
+</RCC>

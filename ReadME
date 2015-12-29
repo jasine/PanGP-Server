@@ -1,0 +1,9 @@
+=== install & Usage ===
+PanGP could be complied on Windows, Linux and Mac OS. The method about installation was introduced at http://PanGP.ybzhao.com/download.html
+
+
+
+Change Log
+=== version 1.0.1 ===
+initialize some variables in sampling thread to avoid program crash
+

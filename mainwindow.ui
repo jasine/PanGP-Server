@@ -1,0 +1,406 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>600</width>
+    <height>600</height>
+   </rect>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>600</width>
+    <height>320</height>
+   </size>
+  </property>
+  <property name="maximumSize">
+   <size>
+    <width>600</width>
+    <height>600</height>
+   </size>
+  </property>
+  <property name="windowTitle">
+   <string>Pan-Genome Profile Tool</string>
+  </property>
+  <property name="windowIcon">
+   <iconset resource="img/img.qrc">
+    <normaloff>:/image/favicon.ico</normaloff>:/image/favicon.ico</iconset>
+  </property>
+  <property name="iconSize">
+   <size>
+    <width>256</width>
+    <height>256</height>
+   </size>
+  </property>
+  <widget class="QWidget" name="centralWidget">
+   <property name="enabled">
+    <bool>true</bool>
+   </property>
+   <widget class="QGroupBox" name="GroupDataType">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>20</y>
+      <width>580</width>
+      <height>125</height>
+     </rect>
+    </property>
+    <property name="title">
+     <string>Input Data</string>
+    </property>
+    <widget class="QRadioButton" name="radioButtonMatrixFile">
+     <property name="geometry">
+      <rect>
+       <x>25</x>
+       <y>20</y>
+       <width>150</width>
+       <height>25</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>0/1 Matrix File</string>
+     </property>
+    </widget>
+    <widget class="QRadioButton" name="radioButtonClusterFile">
+     <property name="geometry">
+      <rect>
+       <x>200</x>
+       <y>20</y>
+       <width>160</width>
+       <height>25</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Gene Clusters File</string>
+     </property>
+    </widget>
+    <widget class="QRadioButton" name="radioButtonPanData">
+     <property name="geometry">
+      <rect>
+       <x>380</x>
+       <y>20</y>
+       <width>180</width>
+       <height>25</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Pan-genome Data File</string>
+     </property>
+    </widget>
+    <widget class="QTextBrowser" name="textBrowserFilePath">
+     <property name="geometry">
+      <rect>
+       <x>120</x>
+       <y>60</y>
+       <width>300</width>
+       <height>25</height>
+      </rect>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="pushButtonBrowse">
+     <property name="geometry">
+      <rect>
+       <x>460</x>
+       <y>60</y>
+       <width>90</width>
+       <height>25</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Browse File</string>
+     </property>
+    </widget>
+    <widget class="QLabel" name="labelInputFile">
+     <property name="geometry">
+      <rect>
+       <x>25</x>
+       <y>60</y>
+       <width>80</width>
+       <height>25</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Input File:</string>
+     </property>
+    </widget>
+    <widget class="QCheckBox" name="checkBoxIsHeader">
+     <property name="geometry">
+      <rect>
+       <x>110</x>
+       <y>90</y>
+       <width>170</width>
+       <height>25</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>File includes Header</string>
+     </property>
+     <property name="checked">
+      <bool>true</bool>
+     </property>
+    </widget>
+    <widget class="QCheckBox" name="checkBoxIsClusterID">
+     <property name="geometry">
+      <rect>
+       <x>320</x>
+       <y>90</y>
+       <width>180</width>
+       <height>25</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>File includes ClusterID</string>
+     </property>
+     <property name="checked">
+      <bool>true</bool>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QGroupBox" name="GroupSampleMethod">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>150</y>
+      <width>580</width>
+      <height>100</height>
+     </rect>
+    </property>
+    <property name="title">
+     <string>Sample Parameters</string>
+    </property>
+    <widget class="QComboBox" name="comboBoxSampleMethod">
+     <property name="geometry">
+      <rect>
+       <x>150</x>
+       <y>20</y>
+       <width>110</width>
+       <height>25</height>
+      </rect>
+     </property>
+     <item>
+      <property name="text">
+       <string>Traverse All</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Totally Random</string>
+      </property>
+     </item>
+     <item>
+      <property name="text">
+       <string>Distance Guide</string>
+      </property>
+     </item>
+    </widget>
+    <widget class="QLabel" name="labelSamplingMethod">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>20</y>
+       <width>125</width>
+       <height>25</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Sample Algorithm:</string>
+     </property>
+     <property name="textFormat">
+      <enum>Qt::AutoText</enum>
+     </property>
+    </widget>
+    <widget class="QLabel" name="labelSampleSize">
+     <property name="geometry">
+      <rect>
+       <x>275</x>
+       <y>20</y>
+       <width>90</width>
+       <height>25</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Sample Size:</string>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="lineEditSampleSize">
+     <property name="geometry">
+      <rect>
+       <x>455</x>
+       <y>20</y>
+       <width>100</width>
+       <height>25</height>
+      </rect>
+     </property>
+    </widget>
+    <widget class="QLabel" name="labelSampleRepeat">
+     <property name="geometry">
+      <rect>
+       <x>20</x>
+       <y>65</y>
+       <width>125</width>
+       <height>25</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Sample Repeat:</string>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="lineEditSampleRepeat">
+     <property name="geometry">
+      <rect>
+       <x>150</x>
+       <y>65</y>
+       <width>110</width>
+       <height>25</height>
+      </rect>
+     </property>
+    </widget>
+    <widget class="QLabel" name="labelSampleAmpCoefficient">
+     <property name="geometry">
+      <rect>
+       <x>275</x>
+       <y>65</y>
+       <width>180</width>
+       <height>25</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>Amplification Coefficient:</string>
+     </property>
+    </widget>
+    <widget class="QLineEdit" name="lineEditAmpCoefficient">
+     <property name="geometry">
+      <rect>
+       <x>455</x>
+       <y>65</y>
+       <width>100</width>
+       <height>25</height>
+      </rect>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QPushButton" name="pushButtonOK">
+    <property name="geometry">
+     <rect>
+      <x>430</x>
+      <y>260</y>
+      <width>50</width>
+      <height>25</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Run</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pushButtonQuit">
+    <property name="geometry">
+     <rect>
+      <x>510</x>
+      <y>260</y>
+      <width>50</width>
+      <height>25</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Quit</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pushButtonShow">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>280</y>
+      <width>150</width>
+      <height>23</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Show Running Detail</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pushButtonHide">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>280</y>
+      <width>150</width>
+      <height>23</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Hide Running Detail</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="pushButtonCancel">
+    <property name="geometry">
+     <rect>
+      <x>510</x>
+      <y>260</y>
+      <width>55</width>
+      <height>25</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Cancel</string>
+    </property>
+   </widget>
+   <widget class="QGroupBox" name="groupBoxProcessMsg">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>321</y>
+      <width>580</width>
+      <height>260</height>
+     </rect>
+    </property>
+    <property name="title">
+     <string>Process Mesaage</string>
+    </property>
+    <widget class="QTextEdit" name="textEditProcessMsg">
+     <property name="geometry">
+      <rect>
+       <x>5</x>
+       <y>24</y>
+       <width>570</width>
+       <height>231</height>
+      </rect>
+     </property>
+    </widget>
+   </widget>
+   <widget class="QLabel" name="labelProcessIMG">
+    <property name="geometry">
+     <rect>
+      <x>380</x>
+      <y>260</y>
+      <width>32</width>
+      <height>32</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>img</string>
+    </property>
+   </widget>
+  </widget>
+  <widget class="QMenuBar" name="menuBar">
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>600</width>
+     <height>23</height>
+    </rect>
+   </property>
+  </widget>
+ </widget>
+ <layoutdefault spacing="6" margin="11"/>
+ <resources>
+  <include location="img/img.qrc"/>
+ </resources>
+ <connections/>
+</ui>

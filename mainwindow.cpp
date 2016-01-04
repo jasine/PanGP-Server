@@ -589,8 +589,9 @@ void MainWindow::slotDrawThread(PanProfileData PanProfileRef)
 //打开pan-genome曲线窗体
 void MainWindow::slotOpenPanWindow(QImage PanCurveImageRef)
 {
-    PanCurveImageRef.save(outpath,"PNG");
-    QCoreApplication::exit(0);
+    PanCurveImageRef.save(outpath+"/Pan.png","PNG");
+    slotFitData(20);
+
     panWindow *pw =new panWindow(PanCurveImageRef,CurveParameterForPanCore,this);
 
     qRegisterMetaType<CurveParameterForPanCoreData>("CurveParameterForPanCoreData"); //注册自定义的数据类型
@@ -621,7 +622,7 @@ void MainWindow::slotOpenPanWindow(QImage PanCurveImageRef)
     //打开about窗口
     connect(pw,SIGNAL(sigOpenAboutWindow()),this,SLOT(slotOpenAboutWindow()));
 
-    pw->show();
+    //pw->show();
 
     // 停止进度条
     //进度条
@@ -794,7 +795,7 @@ void MainWindow::slotDrawNewGeneThread()
 
 void MainWindow::slotOpenNewGeneWindow(QImage NewGeneCurveImageRef)
 {
-    NewGeneCurveImageRef.save("/home/jasine/Pan.png","PNG");
+    NewGeneCurveImageRef.save(outpath+"/NewGene.png","PNG");
     newGeneWindow * ngw =new newGeneWindow(NewGeneCurveImageRef,CurveParameterForNewGene,this);
 
     qRegisterMetaType<CurveParameterForNewGeneData>("CurveParameterForNewGeneData"); //注册自定义的数据类型
@@ -816,6 +817,9 @@ void MainWindow::slotOpenNewGeneWindow(QImage NewGeneCurveImageRef)
 
     // 请求打开about窗口
     connect(ngw,SIGNAL(sigOpenAboutWindow()),this,SLOT(slotOpenAboutWindow()));
+
+    QCoreApplication::exit(0);
+
 
     ngw->show();
 }
@@ -924,6 +928,7 @@ void MainWindow::slotReceiveFittingResult(FittingResultData FittingResultRef)
         qDebug() << "data for new gene fitting";
         slotDrawNewGeneThread();
     }
+
 }
 
 
@@ -973,6 +978,8 @@ void MainWindow::initializeNewGeneWindowParameter()
 
     // 初始化新基因你和结果
     FittingResult.IsNewFittingFinished=false;
+
+
 }
 
 // 初始化新基因画图参数数据

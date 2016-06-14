@@ -272,7 +272,7 @@ void SampleThread::ReadPanGenomeData(QString PanGenomeDataFile, QList<qint32> &G
 
         // 数据格式转换
         genomeNum=row.at(0).toInt();
-        pan=row.at(1).toInt();
+        pan=row.at(row.size()-2).toInt();
         core=row.at(row.size()-1).toInt();
 
         // 计算总基因组数目

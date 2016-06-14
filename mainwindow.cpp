@@ -3,13 +3,15 @@
 
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
-    ui(new Ui::MainWindow)
+    ui(new Ui::MainWindow),
+    newGene(false)
 {
 
    QPixmap pixmap(":/image/back.jpg");
     QPalette palette;
     palette.setBrush(backgroundRole(), QBrush(pixmap));
     setPalette(palette);
+    
 
     // 设置窗口大小
     ui->setupUi(this);
@@ -590,7 +592,12 @@ void MainWindow::slotDrawThread(PanProfileData PanProfileRef)
 void MainWindow::slotOpenPanWindow(QImage PanCurveImageRef)
 {
     PanCurveImageRef.save(outpath+"/Pan.png","PNG");
-    slotFitData(20);
+    
+    if(this->newGene){
+        slotFitData(20);
+    }else{
+        QCoreApplication::exit(0);
+    }
 
     panWindow *pw =new panWindow(PanCurveImageRef,CurveParameterForPanCore,this);
 

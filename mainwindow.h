@@ -42,8 +42,13 @@ class MainWindow : public QMainWindow
 public:
     explicit MainWindow(QWidget *parent = 0);
     ~MainWindow();
-    void autoExec(QString filename,QString outPath);
+    
+    //moved from private area by jasine
+    void autoExec(QString filename,QString outPath);    
+    void slotDrawNewGeneThread();//画新基因的曲线的线程
     QString outpath;
+    
+    bool newGene;
 
 
 
@@ -128,7 +133,6 @@ private slots:
 
 
 //新基因的曲线窗体
-    void slotDrawNewGeneThread();//画新基因的曲线的线程
 
     void slotOpenNewGeneWindow(QImage NewGeneCurveImageRef);// 打开新基因曲线窗口
 

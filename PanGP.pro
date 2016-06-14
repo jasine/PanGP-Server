@@ -10,7 +10,8 @@ greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
 TARGET = PanGP
 TEMPLATE = app
-
+CONFIG += qt
+QT += gui
 
 SOURCES += main.cpp\
         mainwindow.cpp \
